@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 4b-Question 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h2>Right-click anywhere &gt; Inspect &gt; Console to see the output</h2>
+
+    <script>
+        $.getJSON("books.json", function(data) {
+            
+            console.log("Title of first book: " + data.books[0].title);
+            console.log("Author of second book: " + data.books[1].author);
+            console.log("Genres of all books:");
+            for (let i = 0; i < data.books.length; i++) {
+                console.log(data.books[i].title + ": " + data.books[i].genres.join(", "));
+            }
+        });
+    </script>
+
+</body>
+</html>
